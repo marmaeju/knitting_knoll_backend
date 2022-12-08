@@ -1,0 +1,25 @@
+{
+  "name": "knitting_knoll_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marmaeju/knitting_knoll_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marmaeju/knitting_knoll_backend/issues"
+  },
+  "homepage": "https://github.com/marmaeju/knitting_knoll_backend#readme",
+  "dependencies": {
+    "pg": "^8.8.0",
+    "sequelize": "^6.26.0"
+  }
+}

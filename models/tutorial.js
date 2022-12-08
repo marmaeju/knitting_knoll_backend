@@ -14,8 +14,20 @@ module.exports = (sequelize, DataTypes) => {
   }
   Tutorial.init(
     {
-      cast_id: DataTypes.INTEGER,
-      stitch_id: DataTypes.INTEGER,
+      cast_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'casts',
+          key: 'id'
+        }
+      },
+      stitch_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'stitches',
+          key: 'id'
+        }
+      },
       link: DataTypes.STRING
     },
     {

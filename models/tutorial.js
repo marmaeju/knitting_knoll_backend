@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+'use strict'
+const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
   class Tutorial extends Model {
     /**
@@ -10,16 +8,21 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Tutorial.belongsTo(models.Cast, { foreignKey: 'cast_id' })
+      Tutorial.belongsTo(models.Stitch, { foreignKey: 'stitch_id' })
     }
   }
-  Tutorial.init({
-    cast_id: DataTypes.INTEGER,
-    stitch_id: DataTypes.INTEGER,
-    link: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Tutorial',
-  });
-  return Tutorial;
-};
+  Tutorial.init(
+    {
+      cast_id: DataTypes.INTEGER,
+      stitch_id: DataTypes.INTEGER,
+      link: DataTypes.STRING
+    },
+    {
+      sequelize,
+      modelName: 'Tutorial',
+      tableName: 'tutorials'
+    }
+  )
+  return Tutorial
+}

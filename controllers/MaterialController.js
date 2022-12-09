@@ -1,3 +1,31 @@
-const { Tutorials } = require('../models')
+const { Material } = require('../models')
 
-module.exports = {}
+//Create
+const CreateMaterial = async (req, res) => {
+  try {
+    const material = {
+      ...req.body
+    }
+    res.send(material)
+  } catch (error) {
+    throw error
+  }
+}
+
+//Read
+const GetAllMaterials = async (req, res) => {
+  try {
+    const materials = await Material.findAll()
+    res.send(materials)
+  } catch (error) {
+    throw error
+  }
+}
+//Update
+
+//Delete
+
+module.exports = {
+  CreateMaterial,
+  GetAllMaterials
+}

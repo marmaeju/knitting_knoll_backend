@@ -13,7 +13,7 @@ const CreateMaterial = async (req, res) => {
   }
 }
 
-//Read
+//Read All
 const GetAllMaterials = async (req, res) => {
   try {
     const materials = await Material.findAll()
@@ -22,6 +22,17 @@ const GetAllMaterials = async (req, res) => {
     throw error
   }
 }
+
+//Read One
+const GetOneMaterial = async (req, res) => {
+  try {
+    const material = await Material.findByPk(req.params.material_id)
+    res.send(material)
+  } catch (error) {
+    throw error
+  }
+}
+
 //Update
 const UpdateMaterial = async (req, res) => {
   try {
@@ -41,5 +52,6 @@ const UpdateMaterial = async (req, res) => {
 module.exports = {
   CreateMaterial,
   GetAllMaterials,
+  GetOneMaterial,
   UpdateMaterial
 }

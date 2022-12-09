@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const CastRouter = require('./routes/CastRouter')
 const StitchRouter = require('./routes/StitchRouter')
-const TutorialRouter = require('./routes/TutorialRouter')
+const MaterialRouter = require('./routes/MaterialRouter')
 
 const app = express()
 
@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use('/cast', CastRouter)
 app.use('/stitch', StitchRouter)
-app.use('/tutorial', TutorialRouter)
+app.use('/material', MaterialRouter)
 
 app.get('/', (req, res) => res.json({ message: 'Server Works' }))
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))

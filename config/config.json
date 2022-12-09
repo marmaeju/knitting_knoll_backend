@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "knitting_knoll_database_development",
+    "database": "knitting_knoll_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "knitting_knoll_database_test",
+    "database": "knitting_knoll_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "knitting_knoll_database_production",
+    "database": "knitting_knoll_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

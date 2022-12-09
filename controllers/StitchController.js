@@ -14,10 +14,10 @@ const CreateStitch = async (req, res) => {
 }
 
 //Read All
-const GetAllCasts = async (req, res) => {
+const GetAllStitches = async (req, res) => {
   try {
-    const casts = await Cast.findAll()
-    res.send(casts)
+    const stitches = await Stitch.findAll()
+    res.send(stitches)
   } catch (error) {
     throw error
   }
@@ -59,5 +59,6 @@ const DeleteCast = async (req, res) => {
 }
 
 module.exports = {
-  CreateStitch
+  CreateStitch,
+  GetAllStitches
 }

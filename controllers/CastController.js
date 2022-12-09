@@ -24,10 +24,10 @@ const GetAllCasts = async (req, res) => {
 }
 
 //Read One
-const GetOneMaterial = async (req, res) => {
+const GetOneCast = async (req, res) => {
   try {
-    const material = await Material.findByPk(req.params.material_id)
-    res.send(material)
+    const cast = await Cast.findByPk(req.params.cast_id)
+    res.send(cast)
   } catch (error) {
     throw error
   }
@@ -60,5 +60,6 @@ const DeleteMaterial = async (req, res) => {
 
 module.exports = {
   CreateCast,
-  GetAllCasts
+  GetAllCasts,
+  GetOneCast
 }

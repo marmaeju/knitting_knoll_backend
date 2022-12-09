@@ -48,11 +48,11 @@ const UpdateCast = async (req, res) => {
 }
 
 //Delete
-const DeleteMaterial = async (req, res) => {
+const DeleteCast = async (req, res) => {
   try {
-    let material_id = parseInt(req.params.material_id)
-    await Material.destroy({ where: { id: material_id } })
-    res.send({ message: `Deleted material with an id of ${material_id}` })
+    let cast_id = parseInt(req.params.cast_id)
+    await Cast.destroy({ where: { id: cast_id } })
+    res.send({ message: `Deleted material with an id of ${cast_id}` })
   } catch (error) {
     throw error
   }
@@ -62,5 +62,6 @@ module.exports = {
   CreateCast,
   GetAllCasts,
   GetOneCast,
-  UpdateCast
+  UpdateCast,
+  DeleteCast
 }

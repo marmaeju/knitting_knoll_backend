@@ -34,25 +34,25 @@ const GetOneStitch = async (req, res) => {
 }
 
 //Update
-const UpdateCast = async (req, res) => {
+const UpdateStitch = async (req, res) => {
   try {
-    let cast_id = parseInt(req.params.cast_id)
-    let updatedCast = await Cast.update(req.body, {
-      where: { id: cast_id },
+    let stitch_id = parseInt(req.params.stitch_id)
+    let updatedStitch = await Stitch.update(req.body, {
+      where: { id: stitch_id },
       returning: true
     })
-    res.send(updatedCast)
+    res.send(updatedStitch)
   } catch (error) {
     throw error
   }
 }
 
 //Delete
-const DeleteCast = async (req, res) => {
+const DeleteStitch = async (req, res) => {
   try {
-    let cast_id = parseInt(req.params.cast_id)
-    await Cast.destroy({ where: { id: cast_id } })
-    res.send({ message: `Deleted material with an id of ${cast_id}` })
+    let stitch_id = parseInt(req.params.stitch_id)
+    await Stitch.destroy({ where: { id: stitch_id } })
+    res.send({ message: `Deleted material with an id of ${stitch_id}` })
   } catch (error) {
     throw error
   }
@@ -61,5 +61,7 @@ const DeleteCast = async (req, res) => {
 module.exports = {
   CreateStitch,
   GetAllStitches,
-  GetOneStitch
+  GetOneStitch,
+  UpdateStitch,
+  DeleteStitch
 }

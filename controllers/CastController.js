@@ -34,14 +34,14 @@ const GetOneCast = async (req, res) => {
 }
 
 //Update
-const UpdateMaterial = async (req, res) => {
+const UpdateCast = async (req, res) => {
   try {
-    let material_id = parseInt(req.params.material_id)
-    let updatedMaterial = await Material.update(req.body, {
-      where: { id: material_id },
+    let cast_id = parseInt(req.params.cast_id)
+    let updatedCast = await Cast.update(req.body, {
+      where: { id: cast_id },
       returning: true
     })
-    res.send(updatedMaterial)
+    res.send(updatedCast)
   } catch (error) {
     throw error
   }
@@ -61,5 +61,6 @@ const DeleteMaterial = async (req, res) => {
 module.exports = {
   CreateCast,
   GetAllCasts,
-  GetOneCast
+  GetOneCast,
+  UpdateCast
 }

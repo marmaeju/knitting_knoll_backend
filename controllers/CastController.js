@@ -14,10 +14,10 @@ const CreateCast = async (req, res) => {
 }
 
 //Read All
-const GetAllMaterials = async (req, res) => {
+const GetAllCasts = async (req, res) => {
   try {
-    const materials = await Material.findAll()
-    res.send(materials)
+    const casts = await Cast.findAll()
+    res.send(casts)
   } catch (error) {
     throw error
   }
@@ -59,5 +59,6 @@ const DeleteMaterial = async (req, res) => {
 }
 
 module.exports = {
-  CreateCast
+  CreateCast,
+  GetAllCasts
 }

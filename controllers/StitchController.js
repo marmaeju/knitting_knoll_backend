@@ -24,10 +24,10 @@ const GetAllStitches = async (req, res) => {
 }
 
 //Read One
-const GetOneCast = async (req, res) => {
+const GetOneStitch = async (req, res) => {
   try {
-    const cast = await Cast.findByPk(req.params.cast_id)
-    res.send(cast)
+    const stitch = await Stitch.findByPk(req.params.stitch_id)
+    res.send(stitch)
   } catch (error) {
     throw error
   }
@@ -60,5 +60,6 @@ const DeleteCast = async (req, res) => {
 
 module.exports = {
   CreateStitch,
-  GetAllStitches
+  GetAllStitches,
+  GetOneStitch
 }

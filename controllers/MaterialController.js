@@ -3,9 +3,10 @@ const { Material } = require('../models')
 //Create
 const CreateMaterial = async (req, res) => {
   try {
-    const material = {
+    const materialContent = {
       ...req.body
     }
+    let material = await Material.create(materialContent)
     res.send(material)
   } catch (error) {
     throw error

@@ -12,9 +12,9 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/cast', CastRouter)
-app.use('/stitch', StitchRouter)
-app.use('/material', MaterialRouter)
+app.use('/casts', CastRouter)
+app.use('/stitches', StitchRouter)
+app.use('/materials', MaterialRouter)
 
 app.get('/', (req, res) => res.json({ message: 'Server Works' }))
 app.listen(PORT, () => console.log(`Server Started On Port: ${PORT}`))

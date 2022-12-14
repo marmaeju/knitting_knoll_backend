@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   Material.init(
     {
       type: DataTypes.STRING,
-      link: DataTypes.STRING
+      link: DataTypes.STRING,
+      name: DataTypes.STRING
     },
     {
       sequelize,
